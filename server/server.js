@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from 'mongoose';
 import cors from 'cors'
 import bodyParser from "body-parser";
+import { createServer } from "http";
+import { Server } from "socket.io";
 
 const app = express();
 app.use(express.static("../public/index.html",{credentials: 'omit'}))
@@ -85,3 +87,6 @@ var Port = 5000;
 app.listen(Port, (err="") => console.log(`Server Running on Port: http://localhost:${Port}`, err))
 
 
+// const httpServer = createServer();
+// const io = new Server(httpServer, {
+//   });
